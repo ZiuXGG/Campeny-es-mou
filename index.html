@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOOTBALL BEACH FEST | Energia Pura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beach-sand: #fefae0;
+            --ocean-cyan: #00d2ff;
+            --sunset-orange: #ff7e5f;
+            --sunset-pink: #feb47b;
+            --deep-ocean: #003049;
+            --neon-green: #c7ff00;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--beach-sand);
+            color: var(--deep-ocean);
+            overflow-x: hidden;
+        }
+
+        /* --- SECCIÓ HERO IMPACTANT --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+                        url('image.png');
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            color: white;
+        }
+
+        /* L'onada que separa el header */
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 350px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23fefae0" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: 'Righteous', cursive;
+            font-size: 8rem;
+            text-transform: uppercase;
+            line-height: 0.8;
+            margin-bottom: 20px;
+            text-shadow: 10px 10px 0px var(--ocean-cyan);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .subtitle {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2.5rem;
+            color: var(--neon-green);
+            transform: rotate(-5deg);
+        }
+
+        /* --- SECCIÓ VALORS --- */
+        .valors-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .title-valors {
+            font-family: 'Righteous', cursive;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            text-decoration: underline wavy var(--sunset-orange);
+        }
+
+        .grid-valors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card-valor {
+            background: white;
+            padding: 40px;
+            border-radius: 50px 5px 50px 5px;
+            box-shadow: 20px 20px 0px var(--ocean-cyan);
+            transition: 0.3s;
+            border: 3px solid var(--deep-ocean);
+        }
+
+        .card-valor:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 30px 30px 0px var(--sunset-orange);
+        }
+
+        .card-valor h3 {
+            font-family: 'Righteous', cursive;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--sunset-orange);
+        }
+
+        /* --- SECCIÓ SHOOTBALL INFO --- */
+        .info-game {
+            background: linear-gradient(135deg, var(--ocean-cyan), var(--deep-ocean));
+            color: white;
+            padding: 100px 20px;
+            margin-top: 100px;
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .content-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .big-text {
+            font-family: 'Righteous', cursive;
+            font-size: 4rem;
+            color: var(--neon-green);
+        }
+
+        .list-style {
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        .list-style li {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .list-style li::before {
+            content: "🌴";
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- BOTÓ CTA --- */
+        .cta-container {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .btn-beach {
+            font-family: 'Righteous', cursive;
+            font-size: 2.5rem;
+            padding: 25px 60px;
+            background: var(--sunset-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            display: inline-block;
+            box-shadow: 0 10px 0 #b3563e;
+            transition: 0.2s;
+        }
+
+        .btn-beach:active {
+            transform: translateY(10px);
+            box-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 4rem; }
+            .content-box { grid-template-columns: 1fr; }
+            .subtitle { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="z-index: 2;">
+            <p class="subtitle">Benvinguts al nostre</p>
+            <h1>CAMPENY<br>ES MOU</h1>
+            <p style="font-weight: 900; letter-spacing: 10px; margin-top: 20px;">VALORS • ESPORT • INCLUSIÓ</p>
+        </div>
+    </header>
+
+    <section class="valors-section">
+        <h2 class="title-valors">ELS NOSTRES PILARS</h2>
+        <div class="grid-valors">
+            <div class="card-valor">
+                <h3>INCLUSIÓ</h3>
+                <p>Aquí tothom és el MVP. Dissenyem l'espai perquè tothom assiteixi.</p>
+            </div>
+            <div class="card-valor">
+                <h3>RESPECTE</h3>
+                <p>Cuidem el grup i cuidem la platja.</p>
+            </div>
+            <div class="card-valor">
+                <h3>OPTIMISME</h3>
+                <p>Energia a tope! Afrontem cada jugada amb un somriure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-game">
+        <div class="content-box">
+            <div>
+                <h2 class="big-text">EL JOC</h2>
+                <p style="font-size: 1.5rem; margin-top: 20px;">Un camp, dues ales, un Rei i una sola missió: PASAR-S'HO BÉ!</p>
+                <div style="margin-top: 40px;">
+                    <span style="background: var(--neon-green); color: black; padding: 10px 20px; border-radius: 50px; font-weight: bold; margin-right: 10px;">ADAPTABLE</span>
+                    <span style="background: white; color: black; padding: 10px 20px; border-radius: 50px; font-weight: bold;">SOSTENIBLE</span>
+                </div>
+            </div>
+            <div>
+                <ul class="list-style">
+                    <li><strong>Material Eco:</strong> Pilotes d'escuma i cons.</li>
+                    <li><strong>Regla de 3:</strong> Obligatori passar la pilota per 3 companys. Ningú queda exclòs.</li>
+                    <li><strong>El Contraatac:</strong> Les ales i el rei entren en joc per a una remuntada llegendària.</li>
+                    <li><strong>Fair Play:</strong> Modificadors sorpresa del joc per mantenir el bon rotllo.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <a href="#" class="btn-beach">ENTRA AL CAMP!</a>
+        <p style="margin-top: 30px; font-weight: bold; opacity: 0.7;">Prepareu-vos per a l'experiència definitiva a la sorra.</p>
+    </div>
+
+    <footer style="background: var(--deep-ocean); color: white; text-align: center; padding: 40px;">
+        <p>Fet amb &#x2661 pel nostre grup | CAMPENY ES MOU 2026 &copy;</p>
+    </footer>
+
+</body>
+</html>
